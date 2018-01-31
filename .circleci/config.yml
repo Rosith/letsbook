@@ -19,7 +19,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn lint && yarn test:once;
       - run: bash .circleci/setup-heroku.sh
       - add_ssh_keys:
           fingerprints:
