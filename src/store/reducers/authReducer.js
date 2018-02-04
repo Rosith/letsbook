@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 const InitialState = {
-    authenticate :false,
+    authenticated :false,
     me:null,   
 }
 
