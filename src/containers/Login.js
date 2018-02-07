@@ -20,6 +20,7 @@ class Login extends Component {
 
     onSubmit = (e) => {
         e.preventDefault;
+        debugger;
         const { email, password } = this.state;
         this.props.dispatch(loginUser({ email, password }));;
         this.setState({
