@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
+import AdminLayout from './AdminLayout';
+
 class AppointmentList extends Component {
     render() {
         return (
-            <div>
+            <AdminLayout>
                 Appointment List
-            </div>
+                </AdminLayout>
         )
     }
 }

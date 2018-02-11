@@ -4,6 +4,7 @@ import axios from 'axios';
 import {API_URL} from '../../constants';
 
 export const loginUserSuccess = (payload) => {
+    console.log('Inside dispatch loginUserSuccess');
     return {
         type: actionType.AUTH_USER,
         payload: payload,
@@ -11,10 +12,12 @@ export const loginUserSuccess = (payload) => {
 }
 
 export const loginUser = (data) => {
+    console.log('Inside auth action login user before async call');
     return async dispatch => {
         try {
-            const payload = await axios.post(`${API_URL}/login/`, data);
-            debugger;
+            console.log('Inside auth action login user inside async call');
+            //const payload = {};
+            const payload = await axios.post(`${API_URL}/login`, data);
             localStorage.setItem("jwt", payload.data.jwt);
             localStorage.setItem("user", JSON.stringify(payload.data.user));
             dispatch(loginUserSuccess(payload.data.user));

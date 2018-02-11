@@ -7,6 +7,7 @@ import './Login.css';
 import Button from 'react-md/lib/Buttons/Button';
 import { validateEmail } from '../utils/validation';
 import { loginUser } from '../store/actions/authAction';
+import AdminLayout from './AdminLayout';
 
 class Login extends Component {
     constructor(props) {
@@ -20,7 +21,6 @@ class Login extends Component {
 
     onSubmit = (e) => {
         e.preventDefault;
-        debugger;
         const { email, password } = this.state;
         this.props.dispatch(loginUser({ email, password }));;
         this.setState({
@@ -35,7 +35,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="Login-left-align">
+            <AdminLayout>
                 <Grid>
                     <Cell size={4}>
 
@@ -53,7 +53,7 @@ class Login extends Component {
                                             label="Email"
                                             errorText="Email is required"
                                             onChange={email => this.setState({ email })}
-                                            
+
                                             required
                                         />
                                     </Cell>
@@ -68,11 +68,11 @@ class Login extends Component {
                                             required
                                         />
                                     </Cell>
-                                   
+
                                     <Cell size={12}>
                                         <Button id='submit' children="Log In" type="submit" raised primary disabled={!this.isFormValid()}
-                                        onClick={this.onSubmit}
-                                         />
+                                            onClick={this.onSubmit}
+                                        />
                                     </Cell>
 
                                 </Grid>
@@ -83,8 +83,8 @@ class Login extends Component {
 
                     </Cell>
                 </Grid>
+            </AdminLayout>
 
-            </div>
         )
     }
 }
