@@ -3,7 +3,7 @@ import { Card, CardTitle, Grid, Cell, TextField } from 'react-md';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
-import './Login.css';
+//import './Login.css';
 import Button from 'react-md/lib/Buttons/Button';
 import { validateEmail } from '../utils/validation';
 import { loginUser } from '../store/actions/authAction';

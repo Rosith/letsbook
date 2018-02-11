@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Grid, Cell } from 'react-md';
+import Menu from './Menu';
 
 class AdminHeader extends Component {
     constructor(props){
@@ -19,8 +20,8 @@ class AdminHeader extends Component {
                     <Cell size={4}>
                     </Cell>
                     <Cell size={4}>
-                        Menu
-                            </Cell>
+                   <Menu/>
+                 </Cell>
                 </Grid>
         )
     }

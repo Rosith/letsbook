@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import PropTypes from 'prop-types';
 
 
-import './AdminLayout.css';
+//import './AdminLayout.css';
 import AdminHeader from '../components/AdminHeader';
 
 class AdminLayout extends Component {
