@@ -9,13 +9,16 @@ import Login from './Login';
 import AuthRedirect from '../components/authRedirect';
 import AppointmentList from './AppointmentList';
 import { logoutUser } from '../store/actions/authAction';
+import Home from './Home';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
       <div className="App">
-        <AuthRedirect exact path="/" auth={this.props.auth} component={AppointmentList} />
+        <AuthRedirect exact path="/appointments" auth={this.props.auth} component={AppointmentList} />
+        <Route exact path='/' component={Home} />
         <Route path='/login' component={Login} />
+        
       </div>
     );
   }
@@ -25,7 +28,7 @@ App.propTypes = {
   logoutUser: PropTypes.func,
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   auth: state.auth.authenticated,
 })
 

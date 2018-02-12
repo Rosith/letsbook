@@ -9,29 +9,33 @@ import { validateEmail } from '../utils/validation';
 import { loginUser } from '../store/actions/authAction';
 import AdminLayout from './AdminLayout';
 
-class Login extends Component {
+export class Login extends Component {
     constructor(props) {
         super(props);
+    
         this.state = {
-            email: "",
-            password: "",
-            emailValidate: "",
+          email: '',
+          password: '',
+          emailValidate: '',
         };
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault;
+    
+        this.onSubmit = this.onSubmit.bind(this);
+        this.formValid = this.formValid.bind(this);
+      }
+    
+      onSubmit(e) {
+        e.preventDefault();
         const { email, password } = this.state;
-        this.props.dispatch(loginUser({ email, password }));;
-        this.setState({
-            email: '',
-            password: '',
-        });
-    }
-    isFormValid = () => {
+    
+        this.props.dispatch(loginUser({ email, password }));
+        this.setState({ email: '', password: '' });
+      }
+    
+      formValid() {
         const { email, password } = this.state;
+    
         return email.length > 0 && password.length > 0 && validateEmail(email);
-    }
+      }
 
     render() {
         return (
@@ -70,7 +74,7 @@ class Login extends Component {
                                     </Cell>
 
                                     <Cell size={12}>
-                                        <Button id='submit' children="Log In" type="submit" raised primary disabled={!this.isFormValid()}
+                                        <Button id='submit' children="Log In" type="submit" raised primary disabled={!this.formValid()}
                                             onClick={this.onSubmit}
                                         />
                                     </Cell>
