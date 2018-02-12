@@ -11,6 +11,7 @@ import AppointmentList from './AppointmentList';
 import { logoutUser } from '../store/actions/authAction';
 import Home from './Home';
 
+
 export class App extends Component {
   render() {
     return (
@@ -18,7 +19,7 @@ export class App extends Component {
         <AuthRedirect exact path="/appointments" auth={this.props.auth} component={AppointmentList} />
         <Route exact path='/' component={Home} />
         <Route path='/login' component={Login} />
-        
+       
       </div>
     );
   }

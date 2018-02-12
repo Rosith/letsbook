@@ -13,12 +13,12 @@ class AdminHeader extends Component {
     render() {
         return (
                 <Grid className="Admin-toolbar">
-                    <Cell size={4}>
+                    <Cell size={4} phoneSize={1}>
                         {this.state.appName}
                             </Cell>
-                    <Cell size={4}>
+                    <Cell size={4} phoneSize={1}>
                     </Cell>
-                    <Cell size={4}>
+                    <Cell size={4} phoneSize={2} className="Admin-right-align">
                         Menu
                             </Cell>
                 </Grid>
