@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import {Grid, Cell, Button} from 'react-md';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory';
 
-
+const history = createBrowserHistory();
 
 class CustomerHeader extends Component {
+    handleClick() {
+        history.push('/login')
+      }
     constructor(props) {
         super(props);
         this.state = {
-            logo : process.env.REACT_APP_APP_LOGO,
+            logo : process.env.REACT_APP_APP_LOGO,            
         }
-
+        this.handleClick = this.handleClick.bind(this);
     }
+
     render() {
         return (
                 <Grid>
@@ -22,7 +28,8 @@ class CustomerHeader extends Component {
                       
                             </Cell>
                     <Cell size={4} phoneSize={2}  className="Customer-align-right">
-                        <Button primary raised className="Customer-Login-Button">Login</Button>
+
+                        <Button primary raised className="Customer-Login-Button" onClick={this.handleClick}>Login</Button>
                             </Cell>
                           
                 </Grid>

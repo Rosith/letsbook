@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import { Grid, Cell } from 'react-md';
+import AccountMenu from '../components/AccountMenu';
+
 
 class AdminHeader extends Component {
     constructor(props){
@@ -19,7 +21,7 @@ class AdminHeader extends Component {
                     <Cell size={4} phoneSize={1}>
                     </Cell>
                     <Cell size={4} phoneSize={2} className="Admin-right-align">
-                        Menu
+                    <AccountMenu/>
                             </Cell>
                 </Grid>
         )
