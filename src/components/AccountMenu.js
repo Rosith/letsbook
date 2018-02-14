@@ -12,7 +12,7 @@ import {
 const AccountMenu = ({ simplifiedMenu }) => (
   <DropdownMenu
     id={`${!simplifiedMenu ? 'smart-' : ''}avatar-dropdown-menu`}
-    menuItems={['Preferences', 'About', { divider: true }, 'Log out']}
+    menuItems={['About', { divider: true }, 'Log out']}
     anchor={{
       x: DropdownMenu.HorizontalAnchors.CENTER,
       y: DropdownMenu.VerticalAnchors.OVERLAP,
